@@ -1,0 +1,3 @@
+/home/jason-nhk/Udacity/CppND_SnakeGame/Snake-Game/build/CMakeFiles/rebuild_cache.dir
+/home/jason-nhk/Udacity/CppND_SnakeGame/Snake-Game/build/CMakeFiles/SnakeGame.dir
+/home/jason-nhk/Udacity/CppND_SnakeGame/Snake-Game/build/CMakeFiles/edit_cache.dir
