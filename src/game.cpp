@@ -11,7 +11,8 @@ Game::Game(std::size_t grid_width, std::size_t grid_height,Obstacle &obstacle)
       obstacle(obstacle) {
   PlaceFood();
 }
-
+// void Game::Run(Controller &controller, Renderer &renderer,
+//                std::size_t target_frame_duration)
 void Game::Run(Controller const &controller, Renderer &renderer,
                std::size_t target_frame_duration) {
   Uint32 title_timestamp = SDL_GetTicks();
@@ -22,15 +23,16 @@ void Game::Run(Controller const &controller, Renderer &renderer,
   bool running = true;
   // renderer.Render(snake, food);
   // std::getchar();
+  std::thread t1 = std::thread(&Controller::SpeedInput, &controller, std::ref(running), std::ref(snake));
   while (running) {
     frame_start = SDL_GetTicks();
     // Input, Update, Render - the main game loop.
-    std::thread t1 = std::thread(&Controller::SpeedInput, controller, running, snake);
-    controller.HandleInput(running, snake);
+    controller.SpeedInput(running, snake);
+    // controller.HandleInput(running, snake);
   std::cout<< " i am here " << std::endl;
     Update();
     renderer.Render(snake, food);
-    t1.join();
+
     frame_end = SDL_GetTicks();
 
     // Keep track of how long each loop through the input/update/render cycle
@@ -52,6 +54,7 @@ void Game::Run(Controller const &controller, Renderer &renderer,
       SDL_Delay(target_frame_duration - frame_duration);
     }
   }
+  t1.join();
   
 }
 
