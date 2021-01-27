@@ -38,7 +38,7 @@ class Game {
   void Update();
   void RampUp();
   std::mutex _mtxSpped;
-  std::shared_ptr<MessageQueue<int>> queue;
+  // std::shared_ptr<MessageQueue<int>> queue;
 };
 
 #endif

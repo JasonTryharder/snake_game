@@ -25,7 +25,7 @@ void Game::Run(Controller const &controller, Renderer &renderer,
   rampUp_counter = 0;
   // renderer.Render(snake, food);
   // std::getchar();
-  // std::shared_ptr<MessageQueue<int>> queue(new MessageQueue<int>);
+  std::shared_ptr<MessageQueue<int>> queue(new MessageQueue<int>);
   
   while (running) {
     frame_start = SDL_GetTicks();
