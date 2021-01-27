@@ -9,18 +9,7 @@
 #include <condition_variable>
 #include "SDL.h"
 #include "obstacle.h"
-template <class T>
-class MessageQueue
-{
-public:
-    // MessageQueue<T>();
-    T receive();
-    void send(T &&msg);
-private:
-    std::deque<T> _queue; // currently only one element in the queue
-    std::condition_variable _cond;
-    std::mutex _mutex;
-};
+
 
 class Snake : public std::enable_shared_from_this<Snake> {
  public:

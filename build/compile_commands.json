@@ -28,5 +28,10 @@
   "directory": "/home/jason-nhk/Udacity/CppND_SnakeGame/Snake-Game/build",
   "command": "/usr/bin/g++-7   -I/usr/include/SDL2 -I/home/jason-nhk/Udacity/CppND_SnakeGame/Snake-Game/src  -std=c++17 -pthread -g   -std=c++17 -o CMakeFiles/SnakeGame.dir/src/obstacle.cpp.o -c /home/jason-nhk/Udacity/CppND_SnakeGame/Snake-Game/src/obstacle.cpp",
   "file": "/home/jason-nhk/Udacity/CppND_SnakeGame/Snake-Game/src/obstacle.cpp"
+},
+{
+  "directory": "/home/jason-nhk/Udacity/CppND_SnakeGame/Snake-Game/build",
+  "command": "/usr/bin/g++-7   -I/usr/include/SDL2 -I/home/jason-nhk/Udacity/CppND_SnakeGame/Snake-Game/src  -std=c++17 -pthread -g   -std=c++17 -o CMakeFiles/SnakeGame.dir/src/MessageQueue.cpp.o -c /home/jason-nhk/Udacity/CppND_SnakeGame/Snake-Game/src/MessageQueue.cpp",
+  "file": "/home/jason-nhk/Udacity/CppND_SnakeGame/Snake-Game/src/MessageQueue.cpp"
 }
 ]

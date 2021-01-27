@@ -2,6 +2,7 @@
 #include <iostream>
 #include "SDL.h"
 #include <future>
+// #include "MessageQueue.h"
 
 // random generator could generate food outside of grid due to random_w/h range from 0-32, which 32 is should not be included, hence grid_width/height - 1
 Game::Game(std::size_t grid_width, std::size_t grid_height,Obstacle &obstacle)

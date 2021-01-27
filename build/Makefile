@@ -123,6 +123,33 @@ SnakeGame/fast:
 	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/build
 .PHONY : SnakeGame/fast
 
+src/MessageQueue.o: src/MessageQueue.cpp.o
+
+.PHONY : src/MessageQueue.o
+
+# target to build an object file
+src/MessageQueue.cpp.o:
+	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/MessageQueue.cpp.o
+.PHONY : src/MessageQueue.cpp.o
+
+src/MessageQueue.i: src/MessageQueue.cpp.i
+
+.PHONY : src/MessageQueue.i
+
+# target to preprocess a source file
+src/MessageQueue.cpp.i:
+	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/MessageQueue.cpp.i
+.PHONY : src/MessageQueue.cpp.i
+
+src/MessageQueue.s: src/MessageQueue.cpp.s
+
+.PHONY : src/MessageQueue.s
+
+# target to generate assembly for a file
+src/MessageQueue.cpp.s:
+	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/MessageQueue.cpp.s
+.PHONY : src/MessageQueue.cpp.s
+
 src/controller.o: src/controller.cpp.o
 
 .PHONY : src/controller.o
@@ -294,6 +321,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... SnakeGame"
 	@echo "... edit_cache"
+	@echo "... src/MessageQueue.o"
+	@echo "... src/MessageQueue.i"
+	@echo "... src/MessageQueue.s"
 	@echo "... src/controller.o"
 	@echo "... src/controller.i"
 	@echo "... src/controller.s"

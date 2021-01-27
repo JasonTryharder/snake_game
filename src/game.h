@@ -9,8 +9,8 @@
 #include "renderer.h"
 #include "snake.h"
 #include "obstacle.h"
-
-
+#include "MessageQueue.h"
+class MessageQueue<int>;
 class Game {
  public:
   Game(std::size_t grid_width, std::size_t grid_height, Obstacle &obstacle);
