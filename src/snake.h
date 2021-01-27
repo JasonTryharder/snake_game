@@ -4,6 +4,8 @@
 #include <vector>
 #include <mutex>
 #include <deque>
+#include <thread>
+#include <algorithm>
 #include <condition_variable>
 #include "SDL.h"
 #include "obstacle.h"
@@ -20,7 +22,7 @@ private:
     std::mutex _mutex;
 };
 
-class Snake {
+class Snake : public std::enable_shared_from_this<Snake> {
  public:
   enum class Direction { kUp, kDown, kLeft, kRight ,kW ,kS };
 

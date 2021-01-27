@@ -1,6 +1,7 @@
 #include "game.h"
 #include <iostream>
 #include "SDL.h"
+#include <future>
 
 // random generator could generate food outside of grid due to random_w/h range from 0-32, which 32 is should not be included, hence grid_width/height - 1
 Game::Game(std::size_t grid_width, std::size_t grid_height,Obstacle &obstacle)
@@ -21,15 +22,17 @@ void Game::Run(Controller const &controller, Renderer &renderer,
   Uint32 frame_duration;
   int frame_count = 0;
   bool running = true;
+  rampUp_counter = 0;
   // renderer.Render(snake, food);
   // std::getchar();
-  std::thread t1 = std::thread(&Controller::SpeedInput, &controller, std::ref(running), std::ref(snake));
+  // std::shared_ptr<MessageQueue<int>> queue(new MessageQueue<int>);
+  
   while (running) {
     frame_start = SDL_GetTicks();
     // Input, Update, Render - the main game loop.
-    controller.SpeedInput(running, snake);
-    // controller.HandleInput(running, snake);
-  std::cout<< " i am here " << std::endl;
+    // controller.SpeedInput(running, snake);
+    controller.HandleInput(running, snake);
+  // std::cout<< " i am here " << std::endl;
     Update();
     renderer.Render(snake, food);
 
@@ -53,11 +56,26 @@ void Game::Run(Controller const &controller, Renderer &renderer,
     if (frame_duration < target_frame_duration) {
       SDL_Delay(target_frame_duration - frame_duration);
     }
+    if (score - counter ==2)
+    {
+      //start timer
+      rampUp_counter ++;
+      std::future<void> t1 = std::async(std::launch::async,&MessageQueue<int>::send, queue, std::move(rampUp_counter));
+      rampUp_counter = queue->receive();//permission granted 
+      RampUp();
+      std::cout << "speed increased! "<< std::endl;
+      std::cout<< "rampUp counter is "<< rampUp_counter << std::endl;
+      counter = score;}
   }
-  t1.join();
+  // t1.join();
+  
   
 }
 
+void Game::RampUp(){
+  std::lock_guard<std::mutex> Speed_lock(_mtxSpped);
+  snake.speed = snake.speed + 0.05;
+}
 void Game::PlaceFood() {
   int x, y;
   while (true) {
@@ -65,17 +83,18 @@ void Game::PlaceFood() {
     y = random_h(engine);
     // Check that the location is not occupied by a snake item before placing
     // food.
-    if (!snake.SnakeCell(x, y)) {
+    // also check location is not occupied by obstacle
+    if (!snake.SnakeCell(x, y) & !obstacle.ObstacleCell(x, y)) {
       food.x = x;
       food.y = y;
       return;
     }
 
-    if (!obstacle.ObstacleCell(x, y)) {
-      food.x = x;
-      food.y = y;
-      return;
-    }
+    // if (!obstacle.ObstacleCell(x, y)) {
+    //   food.x = x;
+    //   food.y = y;
+    //   return;
+    // }
   }
 }
 

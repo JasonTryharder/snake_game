@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/jason-nhk/Udacity/CppND_SnakeGame/Snake-Game/build",
+  "command": "/usr/bin/g++-7   -I/usr/include/SDL2 -I/home/jason-nhk/Udacity/CppND_SnakeGame/Snake-Game/src  -std=c++17 -pthread -g   -std=c++17 -o CMakeFiles/SnakeGame.dir/src/main.cpp.o -c /home/jason-nhk/Udacity/CppND_SnakeGame/Snake-Game/src/main.cpp",
+  "file": "/home/jason-nhk/Udacity/CppND_SnakeGame/Snake-Game/src/main.cpp"
+},
+{
+  "directory": "/home/jason-nhk/Udacity/CppND_SnakeGame/Snake-Game/build",
+  "command": "/usr/bin/g++-7   -I/usr/include/SDL2 -I/home/jason-nhk/Udacity/CppND_SnakeGame/Snake-Game/src  -std=c++17 -pthread -g   -std=c++17 -o CMakeFiles/SnakeGame.dir/src/game.cpp.o -c /home/jason-nhk/Udacity/CppND_SnakeGame/Snake-Game/src/game.cpp",
+  "file": "/home/jason-nhk/Udacity/CppND_SnakeGame/Snake-Game/src/game.cpp"
+},
+{
+  "directory": "/home/jason-nhk/Udacity/CppND_SnakeGame/Snake-Game/build",
+  "command": "/usr/bin/g++-7   -I/usr/include/SDL2 -I/home/jason-nhk/Udacity/CppND_SnakeGame/Snake-Game/src  -std=c++17 -pthread -g   -std=c++17 -o CMakeFiles/SnakeGame.dir/src/controller.cpp.o -c /home/jason-nhk/Udacity/CppND_SnakeGame/Snake-Game/src/controller.cpp",
+  "file": "/home/jason-nhk/Udacity/CppND_SnakeGame/Snake-Game/src/controller.cpp"
+},
+{
+  "directory": "/home/jason-nhk/Udacity/CppND_SnakeGame/Snake-Game/build",
+  "command": "/usr/bin/g++-7   -I/usr/include/SDL2 -I/home/jason-nhk/Udacity/CppND_SnakeGame/Snake-Game/src  -std=c++17 -pthread -g   -std=c++17 -o CMakeFiles/SnakeGame.dir/src/renderer.cpp.o -c /home/jason-nhk/Udacity/CppND_SnakeGame/Snake-Game/src/renderer.cpp",
+  "file": "/home/jason-nhk/Udacity/CppND_SnakeGame/Snake-Game/src/renderer.cpp"
+},
+{
+  "directory": "/home/jason-nhk/Udacity/CppND_SnakeGame/Snake-Game/build",
+  "command": "/usr/bin/g++-7   -I/usr/include/SDL2 -I/home/jason-nhk/Udacity/CppND_SnakeGame/Snake-Game/src  -std=c++17 -pthread -g   -std=c++17 -o CMakeFiles/SnakeGame.dir/src/snake.cpp.o -c /home/jason-nhk/Udacity/CppND_SnakeGame/Snake-Game/src/snake.cpp",
+  "file": "/home/jason-nhk/Udacity/CppND_SnakeGame/Snake-Game/src/snake.cpp"
+},
+{
+  "directory": "/home/jason-nhk/Udacity/CppND_SnakeGame/Snake-Game/build",
+  "command": "/usr/bin/g++-7   -I/usr/include/SDL2 -I/home/jason-nhk/Udacity/CppND_SnakeGame/Snake-Game/src  -std=c++17 -pthread -g   -std=c++17 -o CMakeFiles/SnakeGame.dir/src/obstacle.cpp.o -c /home/jason-nhk/Udacity/CppND_SnakeGame/Snake-Game/src/obstacle.cpp",
+  "file": "/home/jason-nhk/Udacity/CppND_SnakeGame/Snake-Game/src/obstacle.cpp"
+}
+]

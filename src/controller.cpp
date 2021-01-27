@@ -19,24 +19,24 @@ void Controller::ChangeSpeed(Snake &snake , Snake::Direction input) const
   return;
 }
 
-void Controller::SpeedInput(bool &running, Snake &snake) const {
-  SDL_Event e;
-  while (SDL_PollEvent(&e)) {
-    if (e.type == SDL_QUIT) {
-      running = false;
-    } else if (e.type == SDL_KEYDOWN) {
-      switch (e.key.keysym.sym) {
-        case SDLK_w:
-          ChangeSpeed(snake,Snake::Direction::kW);
-          break;
+// void Controller::SpeedInput(bool &running, Snake &snake) const {
+//   SDL_Event e;
+//   while (SDL_PollEvent(&e)) {
+//     if (e.type == SDL_QUIT) {
+//       running = false;
+//     } else if (e.type == SDL_KEYDOWN) {
+//       switch (e.key.keysym.sym) {
+//         case SDLK_w:
+//           ChangeSpeed(snake,Snake::Direction::kW);
+//           break;
 
-        case SDLK_s:
-          ChangeSpeed(snake, Snake::Direction::kS);
-          break;
-      }
-    }
-  }
-}
+//         case SDLK_s:
+//           ChangeSpeed(snake, Snake::Direction::kS);
+//           break;
+//       }
+//     }
+//   }
+// }
 
 void Controller::HandleInput(bool &running, Snake &snake) const {
   SDL_Event e;
@@ -63,6 +63,14 @@ void Controller::HandleInput(bool &running, Snake &snake) const {
         case SDLK_RIGHT:
           ChangeDirection(snake, Snake::Direction::kRight,
                           Snake::Direction::kLeft);
+          break;
+
+        case SDLK_w:
+          ChangeSpeed(snake,Snake::Direction::kW);
+          break;
+
+        case SDLK_s:
+          ChangeSpeed(snake, Snake::Direction::kS);
           break;
       }
     }

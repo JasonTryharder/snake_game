@@ -18,6 +18,8 @@ void MessageQueue<T>::send(T &&msg)
 {
   std::lock_guard<std::mutex> uLock(_mutex);
   _queue.emplace_back(msg);
+  std::cout<<"count down to increase speed -3 Seconds"<<std::endl;
+  std::this_thread::sleep_for(std::chrono::milliseconds(3000));
   _cond.notify_one();
 }
 

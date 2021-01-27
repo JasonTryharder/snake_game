@@ -3,6 +3,7 @@
 
 #include <random>
 #include <thread>
+#include <mutex>
 #include "SDL.h"
 #include "controller.h"
 #include "renderer.h"
@@ -31,9 +32,13 @@ class Game {
   std::uniform_int_distribution<int> random_h;
 
   int score{0};
-
+  int counter;
+  int rampUp_counter;
   void PlaceFood();
   void Update();
+  void RampUp();
+  std::mutex _mtxSpped;
+  std::shared_ptr<MessageQueue<int>> queue;
 };
 
 #endif
