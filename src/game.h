@@ -10,7 +10,6 @@
 #include "snake.h"
 #include "obstacle.h"
 #include "MessageQueue.h"
-class MessageQueue<int>;
 class Game {
  public:
   Game(std::size_t grid_width, std::size_t grid_height, Obstacle &obstacle);
@@ -38,7 +37,7 @@ class Game {
   void Update();
   void RampUp();
   std::mutex _mtxSpped;
-  // std::shared_ptr<MessageQueue<int>> queue;
+  std::shared_ptr<MessageQueue<int>> queue;
 };
 
 #endif

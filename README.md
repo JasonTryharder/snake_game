@@ -61,5 +61,7 @@ Criterion `7` is implemented in `snake.cpp` in line `7` through `24`.
 
 Criterion `8` is implemented in `game.cpp` in line `28`.
 
-Criterion `9` is implemented in `snake.cpp` in line `7` through `24`.
+Criterion `9` is implemented in `game.cpp` in line `63` through `64`. 
+
+`Additional knowledge : ` template class definition has to be in header files.[ Templated code implementation should never be in a .cpp file: your compiler has to see them at the same time as it sees the code that calls them] (https://stackoverflow.com/questions/1111440/undefined-reference-error-for-template-method)
 
